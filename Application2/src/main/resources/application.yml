@@ -1,0 +1,15 @@
+server:
+  port: 9092
+spring:
+  application:
+    name: APP-2
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9999/auth
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

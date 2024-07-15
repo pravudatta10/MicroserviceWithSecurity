@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: SECURITY
+  datasource:
+    url: jdbc:sqlserver://192.168.2.166:1433;databaseName=MICRO
+    username: SUD
+    password: July@2024
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    properties:
+      hibernate:
+      format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 9999

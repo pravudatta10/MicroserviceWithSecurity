@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        - id: app1
+          uri: lb://APP-1
+          predicates:
+            - Path=/app1/**
+          filters:
+            - AuthenticationFilter
+
+        - id: app2
+          uri: lb://APP-2
+          predicates:
+            - Path=/app2/**
+          filters:
+            - AuthenticationFilter
+
+        - id: security
+          uri: lb://SECURITY
+          predicates:
+            - Path=/auth/**
+
+  application:
+    name: CLOUD-API-GATEWAY
+
+server:
+  port: 3333

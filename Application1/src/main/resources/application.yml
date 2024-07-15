@@ -1,0 +1,10 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: APP-1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
